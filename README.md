@@ -312,3 +312,7 @@ It also covers the desktop, feature-level construction, files, and the four docu
 - The AI's feature vocabulary is small on purpose. It cannot yet edit an application's public interface, add workflows, or wire one application to another.
 - The sequencer's sounds are synthesized (no samples), and playback happens in the browser tab showing it.
 - Spreadsheet formulas cover arithmetic, comparison, text joining, ranges and SUM, AVERAGE, MIN, MAX, COUNT, COUNTA, ROUND, ABS, SQRT, IF, CONCAT, LEN, UPPER and LOWER. There is no cell formatting.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

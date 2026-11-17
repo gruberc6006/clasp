@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Clasp — a local-first, universal computing platform. Build anything. Connect everything.",
+  "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.34.9",
   "engines": {
