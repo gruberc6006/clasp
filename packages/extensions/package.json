@@ -1,0 +1,19 @@
+{
+  "name": "@clasp/extensions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Declarative extension packs and the (documented) sandbox contract for executable ones.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@clasp/core": "workspace:*",
+    "@clasp/runtime": "workspace:*",
+    "@clasp/schemas": "workspace:*",
+    "zod": "^4.6.7",
+    "@clasp/sharing": "workspace:*"
+  }
+}

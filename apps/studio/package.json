@@ -1,0 +1,40 @@
+{
+  "name": "@clasp/studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clasp Studio — the workspace application.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@clasp/ai": "workspace:*",
+    "@clasp/core": "workspace:*",
+    "@clasp/examples": "workspace:*",
+    "@clasp/extensions": "workspace:*",
+    "@clasp/features": "workspace:*",
+    "@clasp/files": "workspace:*",
+    "@clasp/network": "workspace:*",
+    "@clasp/permissions": "workspace:*",
+    "@clasp/persistence": "workspace:*",
+    "@clasp/primitives": "workspace:*",
+    "@clasp/renderer-react": "workspace:*",
+    "@clasp/runtime": "workspace:*",
+    "@clasp/schemas": "workspace:*",
+    "@clasp/sharing": "workspace:*",
+    "@clasp/universal-api": "workspace:*",
+    "@clasp/workflows": "workspace:*",
+    "@xyflow/react": "^12.12.1",
+    "lucide-react": "^0.577.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^6.4.6"
+  }
+}

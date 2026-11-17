@@ -1,0 +1,52 @@
+{
+  "name": "clasp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clasp — a local-first, universal computing platform. Build anything. Connect everything.",
+  "type": "module",
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=20.17"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @clasp/studio dev",
+    "build": "pnpm --filter @clasp/studio build",
+    "preview": "pnpm --filter @clasp/studio preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:ollama": "CLASP_OLLAMA=1 vitest run tests/ollama.live.test.ts",
+    "check": "pnpm typecheck && pnpm test",
+    "docs:tutorial": "CLASP_TUTORIAL_SHOTS=1 playwright test tests/e2e/tutorial.spec.ts",
+    "socket-server": "node scripts/socket-server.mjs"
+  },
+  "devDependencies": {
+    "@clasp/ai": "workspace:*",
+    "@clasp/core": "workspace:*",
+    "@clasp/examples": "workspace:*",
+    "@clasp/extensions": "workspace:*",
+    "@clasp/features": "workspace:*",
+    "@clasp/files": "workspace:*",
+    "@clasp/network": "workspace:*",
+    "@clasp/permissions": "workspace:*",
+    "@clasp/persistence": "workspace:*",
+    "@clasp/primitives": "workspace:*",
+    "@clasp/renderer-react": "workspace:*",
+    "@clasp/runtime": "workspace:*",
+    "@clasp/schemas": "workspace:*",
+    "@clasp/sharing": "workspace:*",
+    "@clasp/universal-api": "workspace:*",
+    "@clasp/workflows": "workspace:*",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/ws": "^8.18.2",
+    "fake-indexeddb": "^6.2.8",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.6",
+    "vitest": "^3.2.7",
+    "ws": "^8.23.0"
+  }
+}

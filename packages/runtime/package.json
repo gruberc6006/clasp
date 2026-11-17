@@ -1,0 +1,19 @@
+{
+  "name": "@clasp/runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic execution engine, component registry and workspace host.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@clasp/core": "workspace:*",
+    "@clasp/schemas": "workspace:*",
+    "@clasp/permissions": "workspace:*",
+    "@clasp/persistence": "workspace:*",
+    "@clasp/universal-api": "workspace:*"
+  }
+}

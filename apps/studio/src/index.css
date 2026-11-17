@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "@clasp/renderer-react/theme.css";
+@import "@xyflow/react/dist/style.css";
+
+/* Applications are drawn by the renderer package; scan it for class names. */
+@source "../../../packages/renderer-react/src";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  button {
+    cursor: pointer;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  }
+}
+
+/*
+ * Themes. The palette is CSS variables (see renderer-react/theme.css), so a
+ * theme only swaps values. These rules are unlayered, so they win over the
+ * defaults Tailwind emits in its theme layer.
+ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-canvas: #141316;
+  --color-surface: #1d1c21;
+  --color-subtle: #27262c;
+  --color-line: #34333a;
+  --color-line-strong: #4a4851;
+  --color-ink: #eceae6;
+  --color-ink-soft: #b4b1ab;
+  --color-ink-faint: #85827c;
+  --color-accent: #8b6dff;
+  --color-danger: #ff6b5e;
+  --color-danger-soft: #3a1d1b;
+  --color-success: #3fc08f;
+  --color-success-soft: #16302a;
+  --color-warning: #f0a35b;
+  --color-warning-soft: #36271a;
+  --shadow-window: 0 1px 2px rgb(0 0 0 / 0.4), 0 16px 40px -16px rgb(0 0 0 / 0.7);
+  --shadow-pop: 0 4px 12px rgb(0 0 0 / 0.4), 0 24px 56px -20px rgb(0 0 0 / 0.75);
+}
+
+/* Any accent: the stronger, softer and text shades follow from it. */
+:root[data-accent],
+:root[data-theme="dark"] {
+  --color-accent-strong: color-mix(in oklab, var(--color-accent) 84%, black);
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 13%, var(--color-surface));
+  --color-accent-ink: color-mix(in oklab, var(--color-accent) 72%, var(--color-ink));
+}
+
+:root[data-theme="dark"][data-accent] {
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 24%, var(--color-surface));
+  --color-accent-ink: color-mix(in oklab, var(--color-accent) 55%, white);
+}
+
+/* The quiet dotted backdrop behind applications and the graph canvas. */
+.clasp-dots {
+  background-image: radial-gradient(var(--color-line-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -11px -11px;
+}
+
+/* React Flow, restyled to match. */
+.react-flow {
+  --xy-background-color: transparent;
+  --xy-edge-stroke: var(--color-line-strong);
+  --xy-edge-stroke-selected: var(--color-accent);
+  --xy-connectionline-stroke: var(--color-accent);
+  --xy-handle-background-color: var(--color-surface);
+  --xy-handle-border-color: var(--color-ink-faint);
+  --xy-attribution-background-color: transparent;
+  --xy-controls-button-background-color: var(--color-surface);
+  --xy-controls-button-border-color: var(--color-line);
+  --xy-minimap-background-color: var(--color-surface);
+  font-family: var(--font-sans);
+}
+.react-flow__handle {
+  width: 9px;
+  height: 9px;
+  border-width: 1.5px;
+}
+.react-flow__handle.clasp-event {
+  border-radius: 2px;
+  border-color: var(--color-accent);
+}
+.react-flow__handle.connectingto,
+.react-flow__handle:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.react-flow__edge.clasp-event-edge .react-flow__edge-path {
+  stroke: var(--color-accent);
+  stroke-dasharray: 5 4;
+}
+.react-flow__edge.clasp-warning-edge .react-flow__edge-path {
+  stroke: var(--color-warning);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+.react-flow__edge.clasp-warning-edge .react-flow__edge-text {
+  fill: var(--color-warning);
+  font-size: 10px;
+  font-weight: 600;
+}
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke-width: 2.5;
+}
+.react-flow__controls {
+  box-shadow: var(--shadow-window);
+  border-radius: 10px;
+  overflow: hidden;
+}
