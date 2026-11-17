@@ -2,6 +2,12 @@
 
 **Build anything. Connect everything.**
 
+<a href="media/clasp-demo.mp4"><img src="media/clasp-preview.gif" alt="Clasp in use: a calculator, a word processor and a game open as desktop windows; a local model proposes a recipe box as a list of features, which then runs; the theme switches to dark with a new background." width="100%"></a>
+
+▶ **[Watch the full two-minute tour](media/clasp-demo.mp4)** (MP4, 9 MB). It was
+recorded from the real Studio, and the app built in it comes from a real local
+model; only the model's wait is sped up. `pnpm demo:video` records it again.
+
 Clasp is a local-first computing platform that feels like a small desktop OS.
 Every application is a persistent graph of reusable, deterministic components,
 and runs in its own movable windows. Applications share data and capabilities

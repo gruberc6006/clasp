@@ -20,7 +20,8 @@
     "test:ollama": "CLASP_OLLAMA=1 vitest run tests/ollama.live.test.ts",
     "check": "pnpm typecheck && pnpm test",
     "docs:tutorial": "CLASP_TUTORIAL_SHOTS=1 playwright test tests/e2e/tutorial.spec.ts",
-    "socket-server": "node scripts/socket-server.mjs"
+    "socket-server": "node scripts/socket-server.mjs",
+    "demo:video": "node scripts/record-demo.mjs"
   },
   "devDependencies": {
     "@clasp/ai": "workspace:*",
